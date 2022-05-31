@@ -14,7 +14,7 @@ void setup() {
   //fullScreen(); //size(500, 600); Display Geometry is mandatory
   minim = new Minim(this); //this leads from data directory, loadFile should also load from project folder, like loadImage();
   song1 = minim.loadFile("DownLOaded/Stairway - Patrick Patrikios.mp3"); //able to pass absolute path, file name, and URL
-  song1.play(); //Parameter is milli-seconds from start of audio file to start fo playing
+  
 } //End setup
 //
 void draw() {
@@ -22,6 +22,7 @@ void draw() {
 }//End draw
 //
 void keyPressed() {
+  //song1.play(); //Parameter is milli-seconds from start of audio file to start fo playing
 }//End keyPressed
 //
 void mousePressed() {
