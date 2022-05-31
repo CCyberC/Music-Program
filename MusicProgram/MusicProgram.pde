@@ -23,8 +23,17 @@ void draw() {
 }//End draw
 //
 void keyPressed() {
+  //Only press a number for the code below
+  String keyStr = String.valueOf(key);
+  println("Number of Repeasts is", keyStr);
+  int num = int(keyStr);
+  song1.loop(num);
+  //
+  /* Previous Play Button and Loop Button
+  int loopNum = 2; //Local Variables plays once and loops twice
   //song1.play(); //Parameter is milli-seconds from start of audio file to start fo playing
-  if ( key=='l' || key=='L' ) song1.loop(1);
+  if ( key=='l' || key=='L' ) song1.loop(loopNum);
+  */
 }//End keyPressed
 //
 void mousePressed() {
