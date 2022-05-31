@@ -25,7 +25,7 @@ void draw() {
 void keyPressed() {
   //Only press a number for the code below
   String keyStr = String.valueOf(key);
-  println("Number of Repeasts is", keyStr);
+  println("Number of Repeats is", keyStr);
   int num = int(keyStr);
   song1.loop(num);
   //
