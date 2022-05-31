@@ -14,7 +14,7 @@ void setup() {
   //fullScreen(); //size(500, 600); Display Geometry is mandatory
   minim = new Minim(this); //this leads from data directory, loadFile should also load from project folder, like loadImage();
   song1 = minim.loadFile("DownLOaded/Stairway - Patrick Patrikios.mp3"); //able to pass absolute path, file name, and URL
-  
+  song1.loop(0); //Parameter is number of repeats
 } //End setup
 //
 void draw() {
