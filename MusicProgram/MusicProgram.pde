@@ -22,7 +22,7 @@ void setup() {
 //
 void draw() {
   if ( song1.isLooping() ) println("There are", song1.loopCount(), "loops left.");
-  if ( song1.isPlaying() && !song1.isLooping() ) println("PlayOnce");
+  if ( song1.isPlaying() && !song1.isLooping() ) println("Play Once");
   //
   println( "Song Position", song1.position(), "Song Length", song1.length() );
 }//End draw
