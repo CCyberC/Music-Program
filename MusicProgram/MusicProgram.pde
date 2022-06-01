@@ -19,16 +19,29 @@ void setup() {
 } //End setup
 //
 void draw() {
-  
+  if ( song1.isLooping() ) println("There are", song1.loopCount(), "loops left.");  
 }//End draw
 //
 void keyPressed() {
+  //Only press a number for this code below
+  println(key);
+  if ( key=='1' || key=='2') {
+    String keyStr = String.valueOf(key);
+    println("Number of Repeats is", keyStr);
+    int num = int(keyStr);
+    song1.loop(num); 
+  }//End LOOP
+  //
+  /*
   //Only press a number for the code below
   String keyStr = String.valueOf(key);
   println("Number of Repeats is", keyStr);
   int num = int(keyStr);
   song1.loop(num);
+  */
   //
+  //Alternate Play Button
+  if ( key=='p' || key=='P' ) song1.play();
   /* Previous Play Button and Loop Button
   int loopNum = 2; //Local Variables plays once and loops twice
   //song1.play(); //Parameter is milli-seconds from start of audio file to start fo playing
