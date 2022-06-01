@@ -29,7 +29,7 @@ void draw() {
 //
 void keyPressed() {
   //Only press a number for this code below
-  println(key);
+  //println(key);
   if ( key=='1' || key=='9') {
     //Note: "9" is assumed as massive. "Simulate Infinite"
     if ( key == '1' ) println("Looping 1 time"); // Simulating Once
