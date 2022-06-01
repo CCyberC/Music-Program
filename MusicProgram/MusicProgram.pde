@@ -65,19 +65,22 @@ void keyPressed() {
   //
   if ( key=='m' || key=='M' ) { //MUTE Button
     if ( song1.isMuted() ) {
-      song1.unmute();
+      song1.unmute(); 
     } else {
       song1.mute();
     }
-  }//End MUTE
+  } //End MUTE
   //
-  /*
   //STOP Button
-  if ( song1.isPlaying() ) { //STOP Button
-    song1.pause();
-  } else {
+  if ( key=='s' || key=='S' ) { //STOP Button
+    if ( song1.isPlaying() ) { 
+      song1.pause();
+      song1.rewind();
+    } else {
+      song1.rewind();
+    }
   }//End STOP Button
-  */
+  //
 }//End keyPressed
 //
 void mousePressed() {
