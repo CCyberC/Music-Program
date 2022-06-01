@@ -23,6 +23,8 @@ void setup() {
 void draw() {
   if ( song1.isLooping() ) println("There are", song1.loopCount(), "loops left.");
   if ( song1.isPlaying() && !song1.isLooping() ) println("PlayOnce");
+  //
+  println( "Song Position", song1.position(), "SOng Length", song1.length() );
 }//End draw
 //
 void keyPressed() {
@@ -48,7 +50,13 @@ void keyPressed() {
   */
   //
   //Alternate Play Button
-  if ( key=='p' || key=='P' ) song1.play();
+  if ( key=='p' || key=='P' ) {
+    if ( song1.isPlaying() ) {
+      song1.pause();
+  } else {
+    song1.play();
+  }
+  //
   /* Previous Play Button and Loop Button
   int loopNum = 2; //Local Variables plays once and loops twice
   //song1.play(); //Parameter is milli-seconds from start of audio file to start fo playing
@@ -62,6 +70,14 @@ void keyPressed() {
       song1.mute();
     }
   }//End MUTE
+  //
+  /*
+  //STOP Button
+  if ( song1.isPlaying() ) { //STOP Button
+    song1.pause();
+  } else {
+  }//End STOP Button
+  */
 }//End keyPressed
 //
 void mousePressed() {
