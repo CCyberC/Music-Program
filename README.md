@@ -3,16 +3,13 @@ Music 20220307
 
 I love electric and tranquil music.
 
-Here are the songs I will find.
+Here are the songs I have. In Order.
 
 <ul>
-  <li> Target Fuse - French Fuse
-  <li> Positive Fuse - French Fuse
+  <li> Stairway - Patrick Patrikios
+  <li> The Empty Moons of Jupiter - DivKid
   <li> Away - Patrick Patrikios
-  <li> Voices - Patrick Patrikios
-  <li> 19th Floor - Bobby Richards
-  <li> Select - Patrick Patrikios
   <li> Take it Slow - SefChol
-  <li> In 3 - Godmode
-  <li> Better - Anno Domini Beats
+  <li> Positive Fuse - French Fuse
+  <li> Target Fuse - French Fuse
 </ul>
