@@ -8,11 +8,21 @@ import ddf.minim.ugens.*;
 //
 Minim minim; //creates object to access all functions
 AudioPlayer song1; //creates "Play List" variables holding extensions WAV, AIFF, AU, SND, & MP3
+AudioPlayer song2;
+AudioPlayer song3;
+AudioPlayer song4;
+AudioPlayer song5;
+AudioPlayer song6;
 //
 void setup() {
   size(500, 600); //Remeber, Display Geoemtry is Mandatory
   minim = new Minim(this); //loads from data directory, loadFile should also laod from project folder, like loadImage()
   song1 = minim.loadFile("DownLoaded/Stairway - Patrick Patrikios.mp3"); //albe to pass absulute path, file name & extension, and URL
+  song2 = minim.loadFile("DownLoaded/The Empty Moons of Jupiter - DivKid.mp3");
+  song3 = minim.loadFile("DownLoaded/Away - Patrick Patrikios.mp3");
+  song4 = minim.loadFile("DownLoaded/Take it Slow - SefChol.mp3");
+  song5 = minim.loadFile("DownLoaded/Positive Fuse - French Fuse.mp3");
+  song6 = minim.loadFile("DownLoaded/Target Fuse - French Fuse.mp3");
   /*
   //fullScreen(); //size(500, 600); Display Geometry is mandatory
   minim = new Minim(this); //this leads from data directory, loadFile should also load from project folder, like loadImage();
@@ -78,6 +88,8 @@ void keyPressed() {
     if ( song1.isPlaying() ) {
       song1.pause();
       song1.rewind();
+      //
+      
     } else {
       song1.rewind();
     }
