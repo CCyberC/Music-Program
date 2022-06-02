@@ -6,8 +6,10 @@ import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 //
+/*
 import processing.sound.*;
 Sound s;
+*/
 //
 Minim minim; //creates object to access all functions
 AudioPlayer song1; //creates "Play List" variables holding extensions WAV, AIFF, AU, SND, & MP3
@@ -32,6 +34,16 @@ void setup() {
   song1 = minim.loadFile("DownLOaded/Stairway - Patrick Patrikios.mp3"); //able to pass absolute path, file name, and URL
   //song1.loop(1); //Parameter is number of repeats
   */
+  //
+  /*
+  //Play 2 sine oscillations? for nice beat
+  SinOsc sin = new SinOsc(this);
+  sin.play(200, 0.2);
+  sin = new SinOsc(this);
+  sin.play(205, 0.2);
+  //Create Sound Object
+  s = new Sound(this);
+  */
 } //End setup
 //
 void draw() {
@@ -39,6 +51,12 @@ void draw() {
   if ( song1.isPlaying() && !song1.isLooping() ) println("Play Once");
   //
   println( "Song Position", song1.position(), "Song Length", song1.length() );
+  //
+  /*
+  float amplitude = map(mouseY, 0, height, 0.4, 0.0);
+  //
+  s.volume(amplitude);
+  */
 }//End draw
 //
 void keyPressed() {
