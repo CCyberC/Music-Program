@@ -55,7 +55,7 @@ void keyPressed() {
     if ( song1.isPlaying() ) {
       song1.pause();
     } else {
-      song1.play(14000);
+      song1.play(0);
     }
   }
   //
