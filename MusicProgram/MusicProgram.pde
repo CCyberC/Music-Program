@@ -6,6 +6,9 @@ import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 //
+import processing.sound.*;
+Sound s;
+//
 Minim minim; //creates object to access all functions
 AudioPlayer song1; //creates "Play List" variables holding extensions WAV, AIFF, AU, SND, & MP3
 AudioPlayer song2;
