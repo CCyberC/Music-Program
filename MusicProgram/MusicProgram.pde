@@ -6,6 +6,8 @@ import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 //
+import processing.sound.*;
+SoundFile file;
 /*
 import processing.sound.*;
 Sound s;
@@ -28,6 +30,11 @@ void setup() {
   song4 = minim.loadFile("DownLoaded/Take it Slow - SefChol.mp3");
   song5 = minim.loadFile("DownLoaded/Positive Fuse - French Fuse.mp3");
   song6 = minim.loadFile("DownLoaded/Target Fuse - French Fuse.mp3");
+  //
+  //Loading a soundfile from data and playing back
+  file = new SoundFile(this, "DownLoaded/Stairway - Patrick Patrikios.mp3");
+  file.amp(0.1);
+  file.play();
   /*
   //fullScreen(); //size(500, 600); Display Geometry is mandatory
   minim = new Minim(this); //this leads from data directory, loadFile should also load from project folder, like loadImage();
@@ -81,7 +88,7 @@ void keyPressed() {
   song1.loop(num);
   */
   //
-  //Alternate Play Button
+  //Alternate Play/Pause Button
   if ( key=='p' || key=='P' ) {
     if ( song1.isPlaying() ) {
       song1.pause();
