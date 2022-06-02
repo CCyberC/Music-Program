@@ -8,6 +8,7 @@ import ddf.minim.ugens.*;
 //
 Minim minim; //creates object to access all functions
 AudioPlayer song1; //creates "Play List" variables holding extensions WAV, AIFF, AU, SND, & MP3
+//
 void setup() {
   size(500, 600); //Remeber, Display Geoemtry is Mandatory
   minim = new Minim(this); //loads from data directory, loadFile should also laod from project folder, like loadImage()
@@ -53,8 +54,9 @@ void keyPressed() {
   if ( key=='p' || key=='P' ) {
     if ( song1.isPlaying() ) {
       song1.pause();
-  } else {
-    song1.play();
+    } else {
+      song1.play(14000);
+    }
   }
   //
   /* Previous Play Button and Loop Button
@@ -63,9 +65,9 @@ void keyPressed() {
   if ( key=='l' || key=='L' ) song1.loop(loopNum);
   */
   //
-  if ( key=='m' || key=='M' ) { //MUTE Button
+  if ( key=='m' || key=='M' ) { //Mute Buttin
     if ( song1.isMuted() ) {
-      song1.unmute(); 
+      song1.unmute();
     } else {
       song1.mute();
     }
@@ -73,13 +75,13 @@ void keyPressed() {
   //
   //STOP Button
   if ( key=='s' || key=='S' ) { //STOP Button
-    if ( song1.isPlaying() ) { 
+    if ( song1.isPlaying() ) {
       song1.pause();
       song1.rewind();
     } else {
       song1.rewind();
     }
-  }//End STOP Button
+  } //End STOP Button
   //
 }//End keyPressed
 //
