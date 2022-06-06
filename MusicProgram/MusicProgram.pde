@@ -10,8 +10,8 @@ import processing.sound.*;
 SoundFile file;
 /*
 import processing.sound.*;
-Sound s;
-*/
+ Sound s;
+ */
 //
 Minim minim; //creates object to access all functions
 AudioPlayer song1; //creates "Play List" variables holding extensions WAV, AIFF, AU, SND, & MP3
@@ -32,27 +32,27 @@ void setup() {
   song6 = minim.loadFile("DownLoaded/Target Fuse - French Fuse.mp3");
   //
   /* ***Important - USE LATER
-  //Loading a soundfile from data and playing back
-  file = new SoundFile(this, "DownLoaded/Stairway - Patrick Patrikios.mp3");
-  file.amp(0.1);
-  file.play();
-  */
+   //Loading a soundfile from data and playing back
+   file = new SoundFile(this, "DownLoaded/Stairway - Patrick Patrikios.mp3");
+   file.amp(0.1);
+   file.play();
+   */
   /*
   //fullScreen(); //size(500, 600); Display Geometry is mandatory
-  minim = new Minim(this); //this leads from data directory, loadFile should also load from project folder, like loadImage();
-  song1 = minim.loadFile("DownLOaded/Stairway - Patrick Patrikios.mp3"); //able to pass absolute path, file name, and URL
-  //song1.loop(1); //Parameter is number of repeats
-  */
+   minim = new Minim(this); //this leads from data directory, loadFile should also load from project folder, like loadImage();
+   song1 = minim.loadFile("DownLOaded/Stairway - Patrick Patrikios.mp3"); //able to pass absolute path, file name, and URL
+   //song1.loop(1); //Parameter is number of repeats
+   */
   //
   /*
   //Play 2 sine oscillations? for nice beat
-  SinOsc sin = new SinOsc(this);
-  sin.play(200, 0.2);
-  sin = new SinOsc(this);
-  sin.play(205, 0.2);
-  //Create Sound Object
-  s = new Sound(this);
-  */
+   SinOsc sin = new SinOsc(this);
+   sin.play(200, 0.2);
+   sin = new SinOsc(this);
+   sin.play(205, 0.2);
+   //Create Sound Object
+   s = new Sound(this);
+   */
 } //End setup
 //
 void draw() {
@@ -63,9 +63,9 @@ void draw() {
   //
   /*
   float amplitude = map(mouseY, 0, height, 0.4, 0.0);
-  //
-  s.volume(amplitude);
-  */
+   //
+   s.volume(amplitude);
+   */
 }//End draw
 //
 void keyPressed() {
@@ -78,7 +78,7 @@ void keyPressed() {
     String keystr = String.valueOf(key);
     println("Number of Repeats is", keystr);
     int num = int(keystr);
-    song1.loop(num); 
+    song1.loop(num);
   }//End LOOP
   if ( key=='l' || key=='L' ) song1.loop(); //No parameter means "infinite loops"
   //
@@ -86,11 +86,11 @@ void keyPressed() {
   //
   /*
   //Only press a number for the code below
-  String keyStr = String.valueOf(key);
-  println("Number of Repeats is", keyStr);
-  int num = int(keyStr);
-  song1.loop(num);
-  */
+   String keyStr = String.valueOf(key);
+   println("Number of Repeats is", keyStr);
+   int num = int(keyStr);
+   song1.loop(num);
+   */
   //
   //Alternate Play/Pause Button
   if ( key=='p' || key=='P' ) {
@@ -110,10 +110,10 @@ void keyPressed() {
   if ( key=='r' || key=='R' ) song1.skip(-1000); //skip backward, or reverse, 1 second (1000 milliseconds)
   //
   /* Previous Play Button and Loop Button
-  int loopNum = 2; //Local Variables plays once and loops twice
-  //song1.play(); //Parameter is milli-seconds from start of audio file to start fo playing
-  if ( key=='l' || key=='L' ) song1.loop(loopNum);
-  */
+   int loopNum = 2; //Local Variables plays once and loops twice
+   //song1.play(); //Parameter is milli-seconds from start of audio file to start fo playing
+   if ( key=='l' || key=='L' ) song1.loop(loopNum);
+   */
   //
   if ( key=='m' || key=='M' ) { //Mute Buttin
     if ( song1.isMuted() ) {
@@ -129,7 +129,6 @@ void keyPressed() {
       song1.pause();
       song1.rewind();
       //
-      
     } else {
       song1.rewind();
     }
