@@ -96,7 +96,7 @@ void keyPressed() {
   if ( key=='p' || key=='P' ) {
     if ( song1.isPlaying() ) {
       song1.pause();
-    } else if ( song1.length() - song1.position() <= 1000 ) {
+    } else if ( song1.position() >= song1.length()-song1.length()*1/5 ) {
       song1.rewind();
       song1.play();
     } else {
