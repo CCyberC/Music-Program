@@ -80,6 +80,8 @@ void keyPressed() {
     int num = int(keystr);
     song1.loop(num); 
   }//End LOOP
+  if ( key=='l' || key=='L' ) song1.loop(); //No parameter means "infinite loops"
+  //
   if ( key>='2' && key!='9' ) println("I do not loop that high. Try again.");
   //
   /*
@@ -95,7 +97,7 @@ void keyPressed() {
     if ( song1.isPlaying() ) {
       song1.pause();
     } else {
-      song1.play(0);
+      song1.play(14000);
     }
   }
   //
