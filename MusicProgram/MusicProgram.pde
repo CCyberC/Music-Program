@@ -15,6 +15,8 @@ import processing.sound.*;
 //
 Minim minim; //creates object to access all functions
 AudioPlayer song1; //creates "Play List" variables holding extensions WAV, AIFF, AU, SND, & MP3
+AudioMetaData songMetaData1; //"song1's meta data"
+//
 AudioPlayer song2;
 AudioPlayer song3;
 AudioPlayer song4;
@@ -24,35 +26,19 @@ AudioPlayer song6;
 void setup() {
   size(500, 600); //Remeber, Display Geoemtry is Mandatory
   minim = new Minim(this); //loads from data directory, loadFile should also laod from project folder, like loadImage()
+  //
   song1 = minim.loadFile("DownLoaded/Stairway - Patrick Patrikios.mp3"); //albe to pass absulute path, file name & extension, and URL
+  songMetaData1 = song1.getMetaData(); //reads song meta 1, like song1, mimicking array notation
+  //
   song2 = minim.loadFile("DownLoaded/The Empty Moons of Jupiter - DivKid.mp3");
   song3 = minim.loadFile("DownLoaded/Away - Patrick Patrikios.mp3");
   song4 = minim.loadFile("DownLoaded/Take it Slow - SefChol.mp3");
   song5 = minim.loadFile("DownLoaded/Positive Fuse - French Fuse.mp3");
   song6 = minim.loadFile("DownLoaded/Target Fuse - French Fuse.mp3");
   //
-  /* ***Important - USE LATER
-   //Loading a soundfile from data and playing back
-   file = new SoundFile(this, "DownLoaded/Stairway - Patrick Patrikios.mp3");
-   file.amp(0.1);
-   file.play();
-   */
-  /*
-  //fullScreen(); //size(500, 600); Display Geometry is mandatory
-   minim = new Minim(this); //this leads from data directory, loadFile should also load from project folder, like loadImage();
-   song1 = minim.loadFile("DownLOaded/Stairway - Patrick Patrikios.mp3"); //able to pass absolute path, file name, and URL
-   //song1.loop(1); //Parameter is number of repeats
-   */
-  //
-  /*
-  //Play 2 sine oscillations? for nice beat
-   SinOsc sin = new SinOsc(this);
-   sin.play(200, 0.2);
-   sin = new SinOsc(this);
-   sin.play(205, 0.2);
-   //Create Sound Object
-   s = new Sound(this);
-   */
+  println("Start of Console");
+  println("CLick the console to Finish Starting this Program"); // See previous lesson for OS-level Button
+  println("Title:" songMetaData1.title() );
 } //End setup
 //
 void draw() {
