@@ -96,10 +96,18 @@ void keyPressed() {
   if ( key=='p' || key=='P' ) {
     if ( song1.isPlaying() ) {
       song1.pause();
+    } else if ( song1.length() - song1.position() <= 1000 ) {
+      song1.rewind();
+      song1.play();
     } else {
-      song1.play(14000);
+      song1.play();
     }
-  }
+  }//End Play/Pause Button
+  //
+  //Forward and Reverse Button
+  //Built-in question: .isPlaying();
+  if ( key=='f' || key=='F' ) song1.skip(1000); //skip forward 1 second (1000 milliseconds)
+  if ( key=='r' || key=='R' ) song1.skip(-1000); //skip backward, or reverse, 1 second (1000 milliseconds)
   //
   /* Previous Play Button and Loop Button
   int loopNum = 2; //Local Variables plays once and loops twice
