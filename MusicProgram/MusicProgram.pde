@@ -26,6 +26,7 @@ AudioPlayer song5;
 AudioPlayer song6;
 //
 color black=0, purple=#2C08FF; //Grey Scale vs. Hexidecimal
+PFont titleFont;
 //
 void setup() {
   size(500, 600); //Remeber, Display Geoemtry is Mandatory
@@ -33,6 +34,7 @@ void setup() {
   //
   song1 = minim.loadFile("DownLoaded/Stairway - Patrick Patrikios.mp3"); //albe to pass absulute path, file name & extension, and URL
   songMetaData1 = song1.getMetaData(); //reads song meta 1, like song1, mimicking array notation
+  titleFont = createFont ("Century", 55);
   //
   song2 = minim.loadFile("DownLoaded/The Empty Moons of Jupiter - DivKid.mp3");
   song3 = minim.loadFile("DownLoaded/Away - Patrick Patrikios.mp3");
