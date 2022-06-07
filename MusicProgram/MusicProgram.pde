@@ -25,6 +25,8 @@ AudioPlayer song4;
 AudioPlayer song5;
 AudioPlayer song6;
 //
+color black=0, purple=#2C08FF; //Grey Scale vs. Hexidecimal
+//
 void setup() {
   size(500, 600); //Remeber, Display Geoemtry is Mandatory
   minim = new Minim(this); //loads from data directory, loadFile should also laod from project folder, like loadImage()
