@@ -29,12 +29,14 @@ void setup() {
   minim = new Minim(this); //loads from data directory, loadFile should also laod from project folder, like loadImage()
   //
   song[currentSong] = minim.loadFile("DownLoaded/Stairway - Patrick Patrikios.mp3"); //albe to pass absulute path, file name & extension, and URL
-  song[1] = minim.loadFile("DownLoaded/The Empty Moons of Jupiter - DivKid.mp3");
-  song[2] = minim.loadFile("DownLoaded/Away - Patrick Patrikios.mp3");
-  song[3] = minim.loadFile("DownLoaded/Take it Slow - SefChol.mp3");
-  song[4] = minim.loadFile("DownLoaded/Positive Fuse - French Fuse.mp3");
-  song[5] = minim.loadFile("DownLoaded/Target Fuse - French Fuse.mp3"); 
+  song[currentSong+=1] = minim.loadFile("DownLoaded/The Empty Moons of Jupiter - DivKid.mp3");
+  song[currentSong+=1] = minim.loadFile("DownLoaded/Away - Patrick Patrikios.mp3");
+  song[currentSong+=1] = minim.loadFile("DownLoaded/Take it Slow - SefChol.mp3");
+  song[currentSong+=1] = minim.loadFile("DownLoaded/Positive Fuse - French Fuse.mp3");
+  song[currentSong+=1] = minim.loadFile("DownLoaded/Target Fuse - French Fuse.mp3"); 
   //array is always one less, that's why there is no 6, thye count from 0
+  //
+  currentSong-=currentSong; //currentSong = currentSong - currentSong
   for ( int i=currentSong; i<song.length; i++ ) { //i+=1, i=i+1, i++
     songMetaData[i] = song[i].getMetaData();
   }//End Meta Data
@@ -58,7 +60,8 @@ void draw() {
   if ( song[currentSong].isLooping() ) println("There are", song[currentSong].loopCount(), "loops left.");
   if ( song[currentSong].isPlaying() && !song[currentSong].isLooping() ) println("Play Once");
   //
-  //println( "Song Position", song1.position(), "Song Length", song1.length() );
+  println("Computer Number of Current Song:", currentSong);
+  println( "Song Position", song[currentSong].position(), "Song Length", song[currentSong].length() );
   //
   background (black);
   rect(width*1/4, height*0, width*1/2, height*1/10);
@@ -141,9 +144,18 @@ void keyPressed() {
     }
   } //End STOP Button
   //
+  if ( key=='n' || key=='N' ) {
+    if ( song[currentSong].isPlaying() ) {
+      //Serious Problem: playing multiple songs at the same time
+    } else {
+      currentSong++;
+    }
+  } //End Next Button
+  //
 }//End keyPressed
 //
 void mousePressed() {
+  //
 }//End mousePressed
 //
 //End MAIN
