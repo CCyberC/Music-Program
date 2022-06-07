@@ -6,8 +6,10 @@ import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 //
+/*
 import processing.sound.*;
 SoundFile file;
+*/
 /*
 import processing.sound.*;
  Sound s;
@@ -37,16 +39,24 @@ void setup() {
   song6 = minim.loadFile("DownLoaded/Target Fuse - French Fuse.mp3");
   //
   println("Start of Console");
-  println("CLick the console to Finish Starting this Program"); // See previous lesson for OS-level Button
-  println("Title:" songMetaData1.title() );
+  println("Click the console to Finish Starting this Program"); // See previous lesson for OS-level Button
+  println("Title:", songMetaData1.title() );
 } //End setup
 //
 void draw() {
   if ( song1.isLooping() ) println("There are", song1.loopCount(), "loops left.");
   if ( song1.isPlaying() && !song1.isLooping() ) println("Play Once");
   //
-  println( "Song Position", song1.position(), "Song Length", song1.length() );
+  //println( "Song Position", song1.position(), "Song Length", song1.length() );
   //
+  background (black);
+  rect(width*1/4, height*0, width*1/2, height*1/10);
+  fill(purple); //Ink, hexidecimal copied from Color Selector
+  textAlign (CENTER, CENTER); //Align X&Y, see Processing.org / Reference
+  //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
+  textFont(titleFont, 30); //Change the number until it fits, largest font size
+  text(songMetaData1.title(), width*1/4, height*0, width*1/2, height*1/10);
+  fill(255); //Reset to white for rest of the program
   /*
   float amplitude = map(mouseY, 0, height, 0.4, 0.0);
    //
