@@ -16,14 +16,10 @@ import processing.sound.*;
  */
 //
 Minim minim; //creates object to access all functions
-AudioPlayer song1; //creates "Play List" variables holding extensions WAV, AIFF, AU, SND, & MP3
-AudioMetaData songMetaData1; //"song1's meta data"
-//
-AudioPlayer song2;
-AudioPlayer song3;
-AudioPlayer song4;
-AudioPlayer song5;
-AudioPlayer song6;
+int numberOfSongs = 6;
+AudioPlayer[] song = new AudioPlayer[numberOfSongs]; //creates "Play List" variables holding extensions WAV, AIFF, AU, SND, & MP3
+AudioMetaData[] songMetaData = new AudioMetaData[numberOfSongs]; //"song1's meta data"
+int currentSong = numberOfSongs - numberOfSongs;
 //
 color black=0, purple=#2C08FF; //Grey Scale vs. Hexidecimal
 PFont titleFont;
@@ -32,24 +28,35 @@ void setup() {
   size(500, 600); //Remeber, Display Geoemtry is Mandatory
   minim = new Minim(this); //loads from data directory, loadFile should also laod from project folder, like loadImage()
   //
-  song1 = minim.loadFile("DownLoaded/Stairway - Patrick Patrikios.mp3"); //albe to pass absulute path, file name & extension, and URL
-  songMetaData1 = song1.getMetaData(); //reads song meta 1, like song1, mimicking array notation
-  titleFont = createFont ("Century", 55);
+  song[currentSong] = minim.loadFile("DownLoaded/Stairway - Patrick Patrikios.mp3"); //albe to pass absulute path, file name & extension, and URL
+  song[1] = minim.loadFile("DownLoaded/The Empty Moons of Jupiter - DivKid.mp3");
+  song[2] = minim.loadFile("DownLoaded/Away - Patrick Patrikios.mp3");
+  song[3] = minim.loadFile("DownLoaded/Take it Slow - SefChol.mp3");
+  song[4] = minim.loadFile("DownLoaded/Positive Fuse - French Fuse.mp3");
+  song[5] = minim.loadFile("DownLoaded/Target Fuse - French Fuse.mp3"); 
+  //array is always one less, that's why there is no 6, thye count from 0
+  for ( int i=currentSong; i<song.length; i++ ) { //i+=1, i=i+1, i++
+    songMetaData[i] = song[i].getMetaData();
+  }//End Meta Data
+  /* For summarization ...
   //
-  song2 = minim.loadFile("DownLoaded/The Empty Moons of Jupiter - DivKid.mp3");
-  song3 = minim.loadFile("DownLoaded/Away - Patrick Patrikios.mp3");
-  song4 = minim.loadFile("DownLoaded/Take it Slow - SefChol.mp3");
-  song5 = minim.loadFile("DownLoaded/Positive Fuse - French Fuse.mp3");
-  song6 = minim.loadFile("DownLoaded/Target Fuse - French Fuse.mp3");
+  songMetaData[0] = song[0].getMetaData(); //reads song meta 1, like song1, mimicking array notation
+  songMetaData[1] = song[1].getMetaData();
+  songMetaData[2] = song[2].getMetaData();
+  songMetaData[3] = song[3].getMetaData();
+  songMetaData[4] = song[4].getMetaData();
+  songMetaData[5] = song[5].getMetaData();
+  */
+  titleFont = createFont ("Century", 55);
   //
   println("Start of Console");
   println("Click the console to Finish Starting this Program"); // See previous lesson for OS-level Button
-  println("Title:", songMetaData1.title() );
+  println("Title:", songMetaData[currentSong].title() );
 } //End setup
 //
 void draw() {
-  if ( song1.isLooping() ) println("There are", song1.loopCount(), "loops left.");
-  if ( song1.isPlaying() && !song1.isLooping() ) println("Play Once");
+  if ( song[currentSong].isLooping() ) println("There are", song[currentSong].loopCount(), "loops left.");
+  if ( song[currentSong].isPlaying() && !song[currentSong].isLooping() ) println("Play Once");
   //
   //println( "Song Position", song1.position(), "Song Length", song1.length() );
   //
