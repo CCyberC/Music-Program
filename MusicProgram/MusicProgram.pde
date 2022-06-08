@@ -160,11 +160,15 @@ void keyPressed() {
     }
   } //End Next Button
   //
-  /* Previous Button
-  if () {
-    
+  //Previous Button
+  if ( key=='b' || key=='B' ) {
+    if ( song[currentSong].() ) {
+      
+    } else {
+      
+    }
   }//End Previous Button
-  */
+  
   //
 }//End keyPressed
 //
