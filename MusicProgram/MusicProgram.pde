@@ -147,6 +147,7 @@ void keyPressed() {
   if ( key=='n' || key=='N' ) {
     if ( song[currentSong].isPlaying() ) {
       //Serious Problem: playing multiple songs at the same time
+      //Built-in Pause feature or STOP feature
     } else {
       currentSong++;
       song[currentSong].play();
