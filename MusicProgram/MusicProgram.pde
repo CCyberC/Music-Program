@@ -150,19 +150,11 @@ void keyPressed() {
       //Built-in Pause feature or STOP feature
       song[currentSong].pause();
       song[currentSong].rewind();
-      if ( currentSong >= song.length-1 ) {
-        currentSong -=currentSong;  //Beginning of Playlist
-      } else {
-        currentSong++; 
-      }//End of CATCH
+      nextButtonArrayCatch();
       song[currentSong].play();
     } else {
       song[currentSong].rewind(); //Built-in rewind feature so all songs start at zero
-      if ( currentSong >= song.length-1 ) {
-        currentSong -=currentSong;  //Beginning of Playlist
-      } else {
-        currentSong++; 
-      } //End of CATCH
+      nextButtonArrayCatch();
       //Error if >3/Called a catch/CATCH ArrayIndexOutOfBoundsException: Error if currentSong>3
       song[currentSong].play();
     }
