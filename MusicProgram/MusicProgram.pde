@@ -148,7 +148,16 @@ void keyPressed() {
     if ( song[currentSong].isPlaying() ) {
       //Serious Problem: playing multiple songs at the same time
       //Built-in Pause feature or STOP feature
+      song[currentSong].pause();
+      song[currentSong].rewind();
+      if ( currentSong >= song.length-1 ) {
+        currentSong -=currentSong;  //Beginning of Playlist
+      } else {
+        currentSong++; 
+      }//End of CATCH
+      song[currentSong].play();
     } else {
+      song[currentSong].rewind(); //Built-in rewind feature so all songs start at zero
       if ( currentSong >= song.length-1 ) {
         currentSong -=currentSong;  //Beginning of Playlist
       } else {
