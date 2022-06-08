@@ -149,6 +149,7 @@ void keyPressed() {
       //Serious Problem: playing multiple songs at the same time
     } else {
       currentSong++;
+      song[currentSong].play();
     }
   } //End Next Button
   //
