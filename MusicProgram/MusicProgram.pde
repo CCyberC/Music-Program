@@ -149,7 +149,12 @@ void keyPressed() {
       //Serious Problem: playing multiple songs at the same time
       //Built-in Pause feature or STOP feature
     } else {
-      currentSong++;
+      if ( currentSong >= song.length-1 ) {
+        currentSong -=currentSong;  //Beginning of Playlist
+      } else {
+        currentSong++; 
+      } //End of CATCH
+      //Error if >3/Called a catch/CATCH ArrayIndexOutOfBoundsException: Error if currentSong>3
       song[currentSong].play();
     }
   } //End Next Button
