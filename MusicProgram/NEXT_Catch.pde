@@ -11,5 +11,6 @@ void backButtonArrayCatch() {
     currentSong -=currentSong;
   } else {
     currentSong--;
-  } // End of CATCH?
+  } //End of CATCH?
 }//End backButtonArrayCatch
+//

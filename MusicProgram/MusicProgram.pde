@@ -8,8 +8,8 @@ import ddf.minim.ugens.*;
 //
 /*
 import processing.sound.*;
-SoundFile file;
-*/
+ SoundFile file;
+ */
 /*
 import processing.sound.*;
  Sound s;
@@ -41,14 +41,14 @@ void setup() {
     songMetaData[i] = song[i].getMetaData();
   }//End Meta Data
   /* For summarization ...
-  //
-  songMetaData[0] = song[0].getMetaData(); //reads song meta 1, like song1, mimicking array notation
-  songMetaData[1] = song[1].getMetaData();
-  songMetaData[2] = song[2].getMetaData();
-  songMetaData[3] = song[3].getMetaData();
-  songMetaData[4] = song[4].getMetaData();
-  songMetaData[5] = song[5].getMetaData();
-  */
+   //
+   songMetaData[0] = song[0].getMetaData(); //reads song meta 1, like song1, mimicking array notation
+   songMetaData[1] = song[1].getMetaData();
+   songMetaData[2] = song[2].getMetaData();
+   songMetaData[3] = song[3].getMetaData();
+   songMetaData[4] = song[4].getMetaData();
+   songMetaData[5] = song[5].getMetaData();
+   */
   titleFont = createFont ("Century", 55);
   //
   println("Start of Console");
@@ -173,7 +173,7 @@ void keyPressed() {
       song[currentSong].play();
     }
   }//End Previous Button
-  
+
   //
 }//End keyPressed
 //
