@@ -162,10 +162,15 @@ void keyPressed() {
   //
   //Previous Button
   if ( key=='b' || key=='B' ) {
-    if ( song[currentSong].() ) {
-      
+    if ( song[currentSong].isPlaying() ) {
+      song[currentSong].pause();
+      song[currentSong].rewind();
+      backButtonArrayCatch();
+      song[currentSong].play();
     } else {
-      
+      song[currentSong].rewind();
+      backButtonArrayCatch();
+      song[currentSong].play();
     }
   }//End Previous Button
   
