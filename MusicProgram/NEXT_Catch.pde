@@ -7,8 +7,8 @@ void nextButtonArrayCatch() {
 }//End nextButtonArrayCatch
 //
 void backButtonArrayCatch() {
-  if ( currentSong >= song.length-1 ) {
-    currentSong -=currentSong;
+  if ( currentSong == numberOfSongs - numberOfSongs ) {
+    currentSong = numberOfSongs - 1;
   } else {
     currentSong--;
   } //End of CATCH?
